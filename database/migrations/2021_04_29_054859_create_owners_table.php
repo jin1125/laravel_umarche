@@ -21,8 +21,11 @@ class CreateOwnersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+<<<<<<< HEAD
             $table->softDeletes();
 
+=======
+>>>>>>> origin/main
         });
     }
 
