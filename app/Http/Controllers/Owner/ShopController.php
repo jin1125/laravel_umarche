@@ -56,7 +56,7 @@ class ShopController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:50',
-            'infomation' => 'required|string|max:1000',
+            'information' => 'required|string|max:1000',
             'is_selling' => 'required',
         ]);
 
@@ -80,7 +80,7 @@ class ShopController extends Controller
 
         $shop = Shop::findOrFail($id);
         $shop->name = $request->name;
-        $shop->infomation = $request->infomation;
+        $shop->information = $request->information;
         $shop->is_selling = $request->is_selling;
         if(!is_null($imageFile) && $imageFile->isValid() ){
             $shop->filename = $fileNameToStore;

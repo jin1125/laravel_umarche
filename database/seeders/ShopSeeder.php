@@ -18,14 +18,14 @@ class ShopSeeder extends Seeder
             [
                 'owner_id' => 1,
                 'name' => 'shop name',
-                'infomation' => 'shop infomation.shop infomation.shop infomation.shop infomation.shop infomation.',
+                'information' => 'shop information.shop information.shop information.shop information.shop information.',
                 'filename' => '',
                 'is_selling' => true
             ],
             [
                 'owner_id' => 2,
                 'name' => 'shop name',
-                'infomation' => 'shop infomation.shop infomation.shop infomation.shop infomation.shop infomation.',
+                'information' => 'shop information.shop information.shop information.shop information.shop information.',
                 'filename' => '',
                 'is_selling' => true
             ],

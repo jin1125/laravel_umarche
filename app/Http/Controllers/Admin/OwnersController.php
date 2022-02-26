@@ -17,7 +17,7 @@ class OwnersController extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
-    } 
+    }
 
     public function index()
     {
@@ -40,7 +40,7 @@ class OwnersController extends Controller
         $owners = Owner::select('id', 'name', 'email', 'created_at')
         ->paginate(3);
 
-        return view('admin.owners.index', 
+        return view('admin.owners.index',
         compact('owners'));
     }
 
@@ -80,11 +80,11 @@ class OwnersController extends Controller
                 Shop::create([
                     'owner_id' => $owner->id,
                     'name' => 'shop name',
-                    'infomation' =>'',
+                    'information' =>'',
                     'filename' => '',
                     'is_selling' => true
-                ],2); 
-                
+                ],2);
+
             });
         }catch(Throwable $e){
             Log::error($e);
@@ -162,9 +162,9 @@ class OwnersController extends Controller
         $expiredOwners = Owner::onlyTrashed()->get();
         return view('admin.expired-owners', compact('expiredOwners'));
     }
-    
+
     public function expiredOwnerDestroy($id){
         Owner::onlyTrashed()->findOrFail($id)->forceDelete();
-        return redirect()->route('admin.expired-owners.index'); 
+        return redirect()->route('admin.expired-owners.index');
     }
 }
